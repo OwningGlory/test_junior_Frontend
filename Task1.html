@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n = parseInt(prompt("Enter the dimension of the array"));
+		inputArray = new Array(); // Array with integers
+		for(var i = 0; i<n; i++){ // Initialization
+			inputArray[i] = parseInt(prompt("Enter " + (i+1) + " element of the array")); 
+		}
+		
+		function adjacentElementsProduct(inputArray) {
+			var max_product = -1000000;
+			for(var i = 0; i<n; i++){
+				if(i==(n-1)){ // We multiply by (i+1) element of the array in the next step, so we need to enter such condition to exit from the loop
+					break;
+				}
+				if((inputArray[i]*inputArray[i+1])>max_product){
+					max_product = inputArray[i]*inputArray[i+1];					
+				}
+			}
+			return max_product;
+		}
+		document.write("The largest product: " + adjacentElementsProduct(inputArray));
+
+	</script>
+</body>
+</html>

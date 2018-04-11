@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		firstRow = new Array(3);
+		secondRow = new Array(3);
+		thirdRow = new Array(3);		
+		for(var i = 0; i<3; i++){
+			firstRow[i] = prompt("Enter the cell value of first row and " + (i+1) + " column");	
+			secondRow[i] = prompt("Enter the cell value of second row and " + (i+1) + " column");	
+			thirdRow[i] = prompt("Enter the cell value of third row and " + (i+1) + " column");		
+		}
+		xoRefer = new Array(firstRow, secondRow, thirdRow);
+		function xoReferee(data) {
+			if((data[0][0]=="X" && data[1][0]=="X" && data[2][0]=="X")||(data[0][1]=="X" && data[1][1]=="X" && data[2][1]=="X")||(data[0][2]=="X" && data[1][2]=="X" && data[2][2]=="X")||(data[0][0]=="X" && data[0][1]=="X" && data[0][2]=="X")||(data[1][0]=="X" && data[1][1]=="X" && data[1][2]=="X")||(data[2][0]=="X" && data[2][1]=="X" && data[2][2]=="X")||(data[0][0]=="X" && data[1][1]=="X" && data[2][2]=="X")||(data[0][2]=="X" && data[1][1]=="X" && data[2][0]=="X")) {
+				return "X";
+			}else{
+				if((data[0][0]=="0" && data[1][0]=="0" && data[2][0]=="0")||(data[0][1]=="0" && data[1][1]=="0" && data[2][1]=="0")||(data[0][2]=="0" && data[1][2]=="0" && data[2][2]=="0")||(data[0][0]=="0" && data[0][1]=="0" && data[0][2]=="0")||(data[1][0]=="0" && data[1][1]=="0" && data[1][2]=="0")||(data[2][0]=="0" && data[2][1]=="0" && data[2][2]=="0")||(data[0][0]=="0" && data[1][1]=="0" && data[2][2]=="0")||(data[0][2]=="X" && data[1][1]=="X" && data[2][0]=="X")) {
+				return "0";
+				}else {
+					return "D";
+				}	
+			}		
+		}	
+		result = xoReferee(xoRefer);	
+		if(result!="D"){
+			document.write("Win " + result + "-player");
+		}else{
+			document.write("Game is draw");
+		}
+	</script>
+</body>
+</html>
